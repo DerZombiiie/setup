@@ -69,8 +69,10 @@ else
 	exit 1
 fi
 
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k >> /dev/null
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 mkdir -p ~/bin/
 cp cat ~/bin/
@@ -83,9 +85,6 @@ cp kitty.conf ~/.config/kitty/kitty.conf
 
 mkdir -p ~/.config/
 cp picom.conf ~/.config/picom.conf
-
-mkdir -p ~/.oh-my-zsh/themes/
-cp fleckenstein.zsh-theme ~/.oh-my-zsh/themes/fleckenstein.zsh-theme
 
 mkdir -p ~/
 cp zshrc ~/.zshrc

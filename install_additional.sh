@@ -7,6 +7,7 @@ sudo add-apt-repository ppa:frinksy/airshipper
 sudo apt-get update
 sudo apt install airshipper
 
+mkdir ~/Downloads/
 cd ~/Downloads
 wget https://download.typora.io/linux/typora_0.11.18_amd64.deb -O typora.deb
 sudo apt install ./typora.deb

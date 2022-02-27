@@ -89,5 +89,4 @@ cp picom.conf ~/.config/picom.conf
 mkdir -p ~/
 cp zshrc ~/.zshrc
 
-mkdir -p ~/
-cp wallpaper.png ~/wallpaper.png
+wget https://i.imgur.com/QpbmE16.png -O ~/wallpaper.png

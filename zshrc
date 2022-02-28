@@ -10,7 +10,31 @@ export PATH="$HOME/bin:$PATH"
 
 source $HOME/powerlevel10k/powerlevel10k.zsh-theme
 
-source $HOME/.zshrc.custom
+£ cntrl + left / right
+bindkey ";5D" backward-word
+bindkey ";5C" forward-word
+
+£ Pos1 (home) & Ende (End) keys
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
+£ delete key:
+bindkey 'e[e~' delete-char
+
+£ cntrl + o for file selector
+bindkey -s "^o" 'micro $(fzf)^M'
+
+bindkey "^R" history-incremental-search-backward
+
+£ alias stuff
+alias l="ls -l"
+alias la="ls -la"
+alias lh="ls -halt"
+
+£ history:
+export HISTFILE=~/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=100000
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -20,10 +44,3 @@ export TERM="xterm-256color"
 alias µ="micro"
 alias proxy="export HTTP_PROXY=\"http://proxy:8080/\";export HTTPS_PROXY=\"http://proxy:8080/\""
 alias lsd="ls | lolcat"
-
-export PATH="${PATH}:/home/user/crosstool/bin/"
-export PATH="${PATH}:/home/user/x-tools/powerpc64-unknown-linux-gnu/bin/"
-export CONCURRENCY_LEVEL=#number
-
-export VITASDK=/usr/local/vitasdk # define $VITASDK if you haven't already
-export PATH=$VITASDK/bin:$PATH # add vitasdk tool to $PATH if you haven't already

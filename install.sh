@@ -29,7 +29,8 @@ if command_exists apt; then
 		zsh \
 		lua5.3 \
 		git \
-		imagemagick
+		imagemagick \
+		kde-spectacle
 
 elif command_exists emerge; then
 	USE="
@@ -89,4 +90,4 @@ cp picom.conf ~/.config/picom.conf
 mkdir -p ~/
 cp zshrc ~/.zshrc
 
-wget https://i.imgur.com/QpbmE16.png -O ~/wallpaper.png
+wget https://i.imgur.com/BQx8EDo.jpg -O ~/wallpaper.png

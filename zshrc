@@ -10,28 +10,28 @@ export PATH="$HOME/bin:$PATH"
 
 source $HOME/powerlevel10k/powerlevel10k.zsh-theme
 
-£ cntrl + left / right
+# cntrl + left / right
 bindkey ";5D" backward-word
 bindkey ";5C" forward-word
 
-£ Pos1 (home) & Ende (End) keys
+# Pos1 (home) & Ende (End) keys
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 
-£ delete key:
+# delete key:
 bindkey 'e[e~' delete-char
 
-£ cntrl + o for file selector
+# cntrl + o for file selector
 bindkey -s "^o" 'micro $(fzf)^M'
 
 bindkey "^R" history-incremental-search-backward
 
-£ alias stuff
+# alias stuff
 alias l="ls -l"
 alias la="ls -la"
 alias lh="ls -halt"
 
-£ history:
+# history:
 export HISTFILE=~/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
@@ -44,3 +44,5 @@ export TERM="xterm-256color"
 alias µ="micro"
 alias proxy="export HTTP_PROXY=\"http://proxy:8080/\";export HTTPS_PROXY=\"http://proxy:8080/\""
 alias lsd="ls | lolcat"
+
+alias ctar="tar cf - $1 -P | pv -s $(($(du -sk $1 | awk '{print $1}') * 1024)) | gzip > $2"

@@ -71,3 +71,11 @@ sudo apt install openvpn3 -y
 # windscribe
 wget https://deploy-do.windscribe.com/apps/windscribe_2.3.15_beta_amd64.deb -O windscribe.deb
 sudo apt install ./windscribe.deb -y
+
+# cbonsai
+mkdir -p $HOME/src
+cd $HOME/src
+git clone https://gitlab.com/jallbrit/cbonsai.git
+cd cbonsai
+make
+sudo make install

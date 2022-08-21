@@ -20,6 +20,7 @@ if command_exists apt; then
 	$SUDO apt install -y \
 		i3-gaps \
 		i3status \
+		nemo \
 		feh \
 		picom \
 		bat \
@@ -31,6 +32,22 @@ if command_exists apt; then
 		git \
 		imagemagick \
 		kde-spectacle
+
+elif command_exists pacman; then
+	$SUDO pacman -S \
+		i3-gaps \
+		i3status \
+		feh \
+		picom \
+		bat \
+		lolcat \
+		cowsay \
+		fortune-mod \
+		zsh \
+		lua53 \
+		git \
+		imagemagick \
+		spectacle
 
 elif command_exists emerge; then
 	USE="

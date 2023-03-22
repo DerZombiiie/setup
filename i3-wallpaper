@@ -1,0 +1,67 @@
+#! /bin/bash
+# i3-wallpaper v0.1
+# part of github.com/DerZombiiie/setup
+
+WALLPAPER="$HOME/wallpaper.png"
+
+case "$1" in
+	"get")
+		echo "Current Wallpaper:"
+		echo -n "    "
+		ls -lG --time-style "+" wallpaper.png \
+		| cut -d' ' -f8 \
+		| cut -d'.' -f3-
+		;;
+
+	"set") 
+		if ! [[ $2 ]]
+		then
+			echo "Usage: i3-wallpaper set <wallpaper>"
+			exit 1
+		fi
+
+		FILE="$WALLPAPER.$2"
+
+		# check if file exists
+		if ! test -f "$FILE"
+		then
+			echo "File '$FILE' does not exist"
+			exit 1
+		fi
+
+		# set wallpaper
+		ln -fs "$FILE" "$WALLPAPER"
+		;;
+
+	"list") 
+		echo "Available Wallpapers:"
+		find . \
+		-maxdepth 1 \
+		-regextype sed -regex "\.\/wallpaper.png.*" \
+		-not -name "wallpaper.png" \
+		-printf "%f\n" \
+		| cut -d'.' -f3- \
+		| xargs -I {} echo "  - {}"		
+		;;
+
+	"add")
+		if ! [[ $2 ]] || ! [[ $3 ]]
+		then
+			echo "Usage: i3-wallpaper add <file> <wallpaper-name>"
+			exit 1
+		fi	
+
+		if ! test -f "$2"
+		then
+			echo "File '$2' does not exist"
+			exit 1
+		fi
+
+		cp "$2" "$WALLPAPER.$3"
+		;;
+
+	*) 
+	echo "Usage: i3-wallpaper get | set | list | add"
+	exit 1 
+	;;
+esac

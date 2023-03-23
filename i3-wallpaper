@@ -38,7 +38,8 @@ case "$1" in
 
 	"list") 
 		echo "Available Wallpapers:"
-		find $HOME \
+		cd $HOME
+		find . \
 		-maxdepth 1 \
 		-regextype sed -regex "\.\/wallpaper.png.*" \
 		-not -name "wallpaper.png" \

@@ -31,6 +31,9 @@ case "$1" in
 
 		# set wallpaper
 		ln -fs "$FILE" "$WALLPAPER"
+
+		# restart i3
+		i3-msg restart
 		;;
 
 	"list") 

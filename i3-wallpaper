@@ -11,7 +11,7 @@ case "$1" in
 	"get")
 		echo "Current Wallpaper:"
 		echo -n "    "
-		ls -lG --time-style "+" wallpaper.png \
+		ls -lG --time-style "+" $HOME/wallpaper.png \
 		| cut -d' ' -f8 \
 		| rev \
 		| cut -d'/' -f 1 | rev

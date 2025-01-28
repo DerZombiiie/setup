@@ -1,6 +1,6 @@
 #! /bin/bash
 # i3-wallpaper v0.1
-# part of github.com/DerZombiiie/setup
+# part of github.com/rilendorf/setup
 
 WALLPAPER="$HOME/wallpaper.png"
 WALLPAPER_DIR="$HOME/.wallpaper/"
